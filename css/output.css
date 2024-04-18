@@ -558,8 +558,8 @@ video {
   position: absolute;
 }
 
-.-bottom-\[50px\] {
-  bottom: -50px;
+.bottom-0 {
+  bottom: 0px;
 }
 
 .bottom-5 {
@@ -572,10 +572,6 @@ video {
 
 .right-\[110px\] {
   right: 110px;
-}
-
-.bottom-0 {
-  bottom: 0px;
 }
 
 .z-20 {
