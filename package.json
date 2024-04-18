@@ -15,11 +15,11 @@
     "create:release": "env-cmd -f ./.env node ./release/create-release.cjs",
     "sync:version": "wp-update-project-version -s package.json -p plugin.php"
   },
-  "dependencies": {
-    "tailwindcss": "^3.4.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "archiver": "^7.0.1"
+    "archiver": "^7.0.1",
+    "release-it": "^17.1.1",
+    "tailwindcss": "^3.4.3"
   }
 }
