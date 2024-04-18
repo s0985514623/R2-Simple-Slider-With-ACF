@@ -3,7 +3,7 @@
  * Plugin Name:       R2-Simple-Slider-With-ACF
  * Plugin URI:        https://github.com/s0985514623/R2-Simple-Slider-With-ACF
  * Description:       針對 ACF Repeater建立的簡單輪播器
- * Version:           1.0.0
+ * Version:           1.0.3
  * Requires PHP:      7.4
  * Requires Plugins:  advanced-custom-fields-pro
  * Author:            R2
