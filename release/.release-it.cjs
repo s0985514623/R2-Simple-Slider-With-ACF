@@ -11,7 +11,7 @@
  * @see https://github.com/release-it/release-it/blob/main/docs/configuration.md
  */
 
-const releasedPluginName = "r2-wc-product-addon-release";
+const releasedPluginName = "r2-simple-slider-with-acf-release";
 
 module.exports = {
   releasedPluginName,
