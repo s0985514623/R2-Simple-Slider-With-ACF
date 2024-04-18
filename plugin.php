@@ -5,6 +5,7 @@
  * Description:       針對 ACF Repeater建立的簡單輪播器
  * Version:           1.0.0
  * Requires PHP:      7.4
+ * Requires Plugins:  advanced-custom-fields-pro
  * Author:            R2
  * Author URI:        https://github.com/s0985514623
  * License:           GPL v2 or later
@@ -19,9 +20,10 @@ declare (strict_types = 1);
 namespace R2\SimpleSlider;
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
-use TGM_Plugin_Activation;
+use TGM_Plugin_Activation as TGM;
 
 if ( ! \class_exists( 'R2\SimpleSlider\Plugin' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
 
 	/**
 	 * Class Plugin
@@ -74,30 +76,31 @@ if ( ! \class_exists( 'R2\SimpleSlider\Plugin' ) ) {
 		 * @var array
 		 */
 		public $required_plugins = array(
-			array(
-				'name'     => 'WooCommerce',
-				'slug'     => 'woocommerce',
-				'required' => true,
-				'version'  => '7.6.0',
-			),
+			// array(
+			// 'name'     => 'WooCommerce',
+			// 'slug'     => 'woocommerce',
+			// 'required' => true,
+			// 'version'  => '7.6.0',
+			// ),
 			array(
 				'name'     => 'Advanced Custom Fields PRO',
 				'slug'     => 'advanced-custom-fields-pro',
 				'required' => true,
 				'version'  => '6.0.2',
 			),
-			array(
-				'name'     => 'WP Toolkit',
-				'slug'     => 'wp-toolkit',
-				'source'   => 'https://github.com/j7-dev/wp-toolkit/releases/latest/download/wp-toolkit.zip',
-				'required' => true,
-			),
+			// array(
+			// 'name'     => 'WP Toolkit',
+			// 'slug'     => 'wp-toolkit',
+			// 'source'   => 'https://github.com/j7-dev/wp-toolkit/releases/latest/download/wp-toolkit.zip',
+			// 'required' => true,
+			// ),
 		);
 
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
+
 			require_once __DIR__ . '/inc/class-shortcode.php';
 			\register_activation_hook( __FILE__, array( $this, 'activate' ) );
 			\register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
@@ -114,8 +117,11 @@ if ( ! \class_exists( 'R2\SimpleSlider\Plugin' ) ) {
 		 * @return void
 		 */
 		public function check_required_plugins() {
-			$instance          = TGM_Plugin_Activation::get_instance();
+
+			$instance = TGM::get_instance();
+
 			$is_tgmpa_complete = $instance->is_tgmpa_complete();
+			error_log( '$is_tgmpa_complete ' . $is_tgmpa_complete ? 'true' : 'false' );
 
 			if ( $is_tgmpa_complete ) {
 				self::$dir     = \untrailingslashit( \wp_normalize_path( \plugin_dir_path( __FILE__ ) ) );

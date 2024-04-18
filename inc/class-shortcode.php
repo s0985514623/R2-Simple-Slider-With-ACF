@@ -21,24 +21,61 @@ final class ShortCode {
 	public function __construct( $shortcode = '' ) {
 		if ( ! empty( $shortcode ) ) {
 			\add_shortcode( $shortcode, array( $this, 'shortcode_callback' ) );
-			\wp_enqueue_style( 'swiper', Plugin::$dir . '\css\swiper-bundle.min.css' );
-			\wp_enqueue_script( 'swiper', Plugin::$dir . '\js\swiper-bundle.min.js' );
+			\add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue' ) );
 		}
 	}
 	/**
-	 * Shortcode callback function
+	 * Wp_enqueue function
 	 *
-	 * @return html
+	 * @return void
+	 */
+	public function wp_enqueue() {
+		\wp_enqueue_style( 'swiper-css', Plugin::$url . '/css/swiper-bundle.min.css' );
+		\wp_enqueue_style( 'output-css', Plugin::$url . '/css/output.css' );
+		\wp_enqueue_script( 'swiper-js', Plugin::$url . '/js/swiper-bundle.min.js', null, null, true );
+		\wp_enqueue_script( 'swiper-controller', Plugin::$url . '/js/controller.js', null, null, true );
+	}
+	/**
+	 * Shortcode callback function
 	 */
 	public function shortcode_callback() {
+		// Check rows exists.
+		if ( have_rows( 'banner_swiper' ) ) :
+			echo '<div class="swiper r2-slider">';
+			echo '<div class="swiper-wrapper">';
+			// Loop through rows.
+			while ( have_rows( 'banner_swiper' ) ) :
+				the_row();
 
-		$html = '';
-		ob_start();
-		?>
-<div id="">test2</div>
-		<?php
-		$html .= ob_get_clean();
+				// Load sub field value.
+				$main_title  = get_sub_field( 'main_title' );
+				$sec_title   = get_sub_field( 'sec_title' );
+				$slider_link = get_sub_field( 'link' );
+				$img         = get_sub_field( 'img' );
+				\load_template(
+					Plugin::$dir . '/html/slider-templates.php',
+					false,
+					array(
+						'main_title'  => $main_title,
+						'sec_title'   => $sec_title,
+						'slider_link' => $slider_link,
+						'img'         => $img,
+					)
+				);
 
-		return $html;
+				// End loop.
+			endwhile;
+			echo '</div>';
+			echo '<div class="swiper-controller-wrap flex space-x-5 items-center absolute right-[110px] bottom-[110px] z-20 rounded-full py-1 px-2">';
+			echo '<div class="swiper-button-prev"></div>';
+			echo '<div class="swiper-button-next"></div>';
+			echo '<div class="swiper-pagination"></div>';
+			echo '</div>';
+			echo '</div>';
+			// No value.
+			else :
+				// Do something...
+				echo 'No rows found.';
+			endif;
 	}
 }
