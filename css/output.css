@@ -558,12 +558,24 @@ video {
   position: absolute;
 }
 
-.bottom-\[110px\] {
-  bottom: 110px;
+.-bottom-\[50px\] {
+  bottom: -50px;
+}
+
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
+.right-1\/2 {
+  right: 50%;
 }
 
 .right-\[110px\] {
   right: 110px;
+}
+
+.bottom-0 {
+  bottom: 0px;
 }
 
 .z-20 {
@@ -584,6 +596,11 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.translate-x-1\/2 {
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .flex-col {
@@ -616,6 +633,11 @@ video {
   background-repeat: no-repeat;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -626,8 +648,8 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.pb-40 {
-  padding-bottom: 10rem;
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 @font-face {
@@ -680,7 +702,9 @@ video {
 }
 
 .r2-slider .swiper-controller-wrap .swiper-button-next,
-.r2-slider .swiper-controller-wrap .swiper-button-prev {
+.r2-slider .swiper-controller-wrap .swiper-button-prev,
+.r2-slider-comment-thumbs .swiper-button-next,
+.r2-slider-comment-thumbs .swiper-button-prev {
   position: unset;
   height: -moz-fit-content;
   height: fit-content;
@@ -692,8 +716,52 @@ video {
   color: white;
 }
 
+.r2-slider-comment-thumbs .swiper-pagination {
+  position: unset;
+  color: black;
+}
+
 .r2-slider .swiper-controller-wrap .swiper-button-next:after,
 .r2-slider .swiper-controller-wrap .swiper-button-prev:after {
   font-size: 20px;
   color: white;
+}
+
+.r2-slider-comment-thumbs .swiper-button-next:after,
+.r2-slider-comment-thumbs .swiper-button-prev:after {
+  font-size: 20px;
+  color: black;
+}
+
+/*平板以下*/
+
+@media screen and (max-width: 769px) {
+  .r2-slider .swiper-slide {
+    max-height: 965px;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+
+  .r2-slider .main_title {
+    font-size: 40px;
+  }
+
+  .r2-slider .sec_title {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:bottom-\[110px\] {
+    bottom: 110px;
+  }
+
+  .sm\:right-\[110px\] {
+    right: 110px;
+  }
+
+  .sm\:pb-40 {
+    padding-bottom: 10rem;
+  }
 }

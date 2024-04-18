@@ -24,7 +24,6 @@
   height: 100%;
   z-index: 1;
 }
-
 .r2-slider .main_title {
   font-family: "REEJI-CHAO-ZengGB", Noto Serif TC;
   font-size: 168px;
@@ -44,7 +43,9 @@
 }
 
 .r2-slider .swiper-controller-wrap .swiper-button-next,
-.r2-slider .swiper-controller-wrap .swiper-button-prev {
+.r2-slider .swiper-controller-wrap .swiper-button-prev,
+.r2-slider-comment-thumbs .swiper-button-next,
+.r2-slider-comment-thumbs .swiper-button-prev {
   position: unset;
   height: fit-content;
   margin: 0 10px;
@@ -53,8 +54,33 @@
   position: unset;
   color: white;
 }
+.r2-slider-comment-thumbs .swiper-pagination {
+  position: unset;
+  color: black;
+}
 .r2-slider .swiper-controller-wrap .swiper-button-next:after,
 .r2-slider .swiper-controller-wrap .swiper-button-prev:after {
   font-size: 20px;
   color: white;
+}
+.r2-slider-comment-thumbs .swiper-button-next:after,
+.r2-slider-comment-thumbs .swiper-button-prev:after {
+  font-size: 20px;
+  color: black;
+}
+
+/*平板以下*/
+@media screen and (max-width: 769px) {
+  .r2-slider .swiper-slide {
+    max-height: 965px;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+  .r2-slider .main_title {
+    font-size: 40px;
+  }
+  .r2-slider .sec_title {
+    font-size: 16px;
+  }
 }
