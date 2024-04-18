@@ -1,7 +1,7 @@
 {
   "name": "r2_simple_slider_with_acf",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "author": "ren",
   "scripts": {
