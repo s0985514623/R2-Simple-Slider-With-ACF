@@ -1,7 +1,7 @@
 {
   "name": "r2_simple_slider_with_acf",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "author": "ren",
   "scripts": {
@@ -20,6 +20,7 @@
     "env-cmd": "^10.1.0",
     "archiver": "^7.0.1",
     "release-it": "^17.1.1",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "@soderlind/wp-project-version-sync": "^2.0.2"
   }
 }
