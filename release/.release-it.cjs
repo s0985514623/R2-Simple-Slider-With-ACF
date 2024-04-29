@@ -39,5 +39,5 @@ module.exports = {
     assets: [`./release/${releasedPluginName}.zip`], // relative path
     web: false,
   },
-  allowedItems: ["inc", "css", "html", "js", "composer.json", "composer.lock", "plugin.php", "README.md"],
+  allowedItems: ["inc", "css", "html", "js", "composer.json", "composer.lock", "plugin.php", "README.md", "vendor"],
 };
