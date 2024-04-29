@@ -83,8 +83,8 @@ final class ShortCode {
 	public function r2_slider_comment_shortcode_callback() {
 		// Check rows exists.
 		if ( have_rows( 'comment_swiper' ) ) :
-			echo '<div class="swiper r2-slider-comment-wrap flex ">';
-			echo '<div class="swiper r2-slider-comment-thumbs w-full ">';
+			echo '<div class="swiper r2-slider-comment-wrap flex !max-w-none !w-full">';
+			echo '<div class="swiper r2-slider-comment-thumbs w-2/3 !-ml-[100px] !mr-16">';
 			echo '<div class="swiper-wrapper pb-10">';
 			while ( have_rows( 'comment_swiper' ) ) :
 				the_row();
@@ -106,8 +106,8 @@ final class ShortCode {
 			echo '<div class="swiper-pagination"></div>';
 			echo '</div>';
 			echo '</div>';
-			echo '<div class="swiper r2-slider-comment w-full">';
-			echo '<div class="swiper-wrapper">';
+			echo '<div class="swiper r2-slider-comment w-1/3 !mx-0 max-w-[405px]">';
+			echo '<div class="swiper-wrapper ">';
 			while ( have_rows( 'comment_swiper' ) ) :
 				the_row();
 

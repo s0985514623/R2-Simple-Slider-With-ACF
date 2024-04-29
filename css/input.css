@@ -6,6 +6,11 @@
   src: url(REEJI-CHAO-ZengGB.ttf);
   font-weight: 600;
 }
+.kosugiMaru {
+  font-family: "Kosugi Maru", Kosugi Maru;
+  font-weight: 400;
+  font-style: normal;
+}
 .r2-slider {
   border-radius: 0 0 90px 90px;
   overflow: hidden;
@@ -32,7 +37,7 @@
   z-index: 2;
 }
 .r2-slider .sec_title {
-  font-family: Noto Sans TC;
+  font-family: Kosugi Maru;
   font-size: 24px;
   font-weight: 400;
   color: white;

@@ -5,7 +5,7 @@
  * Description:       針對 ACF Repeater建立的簡單輪播器 短碼[simple-slider-with-acf]
  * Version:           1.0.4
  * Requires PHP:      7.4
- * Requires Plugins:  advanced-custom-fields-pro
+ *
  * Author:            R2
  * Author URI:        https://github.com/s0985514623
  * License:           GPL v2 or later
@@ -121,13 +121,17 @@ if ( ! \class_exists( 'R2\SimpleSlider\Plugin' ) ) {
 			$instance = TGM::get_instance();
 
 			$is_tgmpa_complete = $instance->is_tgmpa_complete();
-			error_log( '$is_tgmpa_complete ' . $is_tgmpa_complete ? 'true' : 'false' );
 
 			if ( $is_tgmpa_complete ) {
-				self::$dir     = \untrailingslashit( \wp_normalize_path( \plugin_dir_path( __FILE__ ) ) );
-				self::$url     = \untrailingslashit( \plugin_dir_url( __FILE__ ) );
-				$plugin_data   = \get_plugin_data( __FILE__ );
-				self::$version = $plugin_data['Version'];
+				self::$dir = \untrailingslashit( \wp_normalize_path( \plugin_dir_path( __FILE__ ) ) );
+				self::$url = \untrailingslashit( \plugin_dir_url( __FILE__ ) );
+
+				// 定義想提取的資訊
+				$default_headers = array(
+					'Version' => 'Version',
+				);
+				$plugin_data     = \get_file_data( __FILE__, $default_headers );
+				self::$version   = $plugin_data['Version'];
 				new ShortCode();
 			}
 		}

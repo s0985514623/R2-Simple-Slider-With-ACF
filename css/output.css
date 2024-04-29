@@ -578,8 +578,33 @@ video {
   z-index: 20;
 }
 
+.\!mx-0 {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.\!-ml-\[100px\] {
+  margin-left: -100px !important;
+}
+
 .\!mb-0 {
   margin-bottom: 0px !important;
+}
+
+.\!mr-16 {
+  margin-right: 4rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .flex {
@@ -590,8 +615,33 @@ video {
   height: 100%;
 }
 
+.\!w-full {
+  width: 100% !important;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.\!max-w-none {
+  max-width: none !important;
+}
+
+.max-w-\[405px\] {
+  max-width: 405px;
 }
 
 .translate-x-1\/2 {
@@ -611,14 +661,37 @@ video {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.bg-\[\#407F6A\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 127 106 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -644,8 +717,51 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @font-face {
@@ -654,6 +770,12 @@ video {
   src: url(REEJI-CHAO-ZengGB.ttf);
 
   font-weight: 600;
+}
+
+.kosugiMaru {
+  font-family: "Kosugi Maru", Kosugi Maru;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .r2-slider {
@@ -686,7 +808,7 @@ video {
 }
 
 .r2-slider .sec_title {
-  font-family: Noto Sans TC;
+  font-family: Kosugi Maru;
   font-size: 24px;
   font-weight: 400;
   color: white;

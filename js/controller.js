@@ -1,5 +1,5 @@
 // Banner Slider
-var swiper = new Swiper(".r2-slider", {
+const r2_slider = new Swiper(".r2-slider", {
   // autoplay: {
   //   delay: 3000,
   // },
@@ -13,15 +13,13 @@ var swiper = new Swiper(".r2-slider", {
   },
 });
 
-var comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
+const r2_comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
   // autoplay: {
   //   delay: 3000,
   // },
-  slidesPerView: 2,
-  spaceBetween: 20,
-  // watchSlidesProgress: true,
-  // freeMode: true,
-  // loop: true,
+  slidesPerView: 3,
+  spaceBetween: 10,
+  loop: true,
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
@@ -30,21 +28,36 @@ var comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  on: {
+    init: function () {
+      const swiper = this;
+      setSlideHeight(swiper);
+    },
+    resize: function () {
+      const swiper = this;
+      setSlideHeight(swiper); // 也在窗口大小改变时调整高度
+    },
+  },
 });
-comment_thumbs.changeLanguageDirection("rtl");
-var comment = new Swiper(".r2-slider-comment", {
+r2_comment_thumbs.changeLanguageDirection("rtl");
+
+const r2_comment = new Swiper(".r2-slider-comment", {
   // autoplay: {
   //   delay: 3000,
   // },
   effect: "fade",
+  crossFade: true,
   slidesPerView: 1,
-  // loop: true,
+  loop: true,
   // spaceBetween: 20,
-  thumbs: {
-    swiper: comment_thumbs,
-  },
 });
-// comment_thumbs.on("slideChange", function () {
-//   console.log("comment_thumbs.activeIndex:", comment_thumbs);
-//   comment.slideTo(comment_thumbs.activeIndex);
-// });
+r2_comment_thumbs.controller.control = r2_comment;
+// r2_comment.controller.control = r2_comment_thumbs;
+
+function setSlideHeight(swiper) {
+  let slides = swiper.slides;
+  for (let i = 0; i < slides.length; i++) {
+    const slideWidth = slides[i].offsetWidth;
+    slides[i].style.height = `${slideWidth}px`;
+  }
+}
