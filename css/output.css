@@ -694,22 +694,6 @@ video {
      object-fit: cover;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-2\.5 {
-  padding: 0.625rem;
-}
-
-.\!p-2 {
-  padding: 0.5rem !important;
-}
-
-.\!p-2\.5 {
-  padding: 0.625rem !important;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
