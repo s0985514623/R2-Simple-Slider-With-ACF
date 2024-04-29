@@ -12,7 +12,7 @@
 if ( ! empty( $main_title ) ) :
 	?>
 <div class="swiper-slide w-full ">
-		<div class="slider-content w-full h-full kosugiMaru py-5 flex flex-col  justify-between">
+		<div class="slider-content w-full h-full kosugiMaru py-5 flex flex-col  justify-between gap-5">
 			<div class="content">
 				<h2 class="!mb-0 kosugiMaru text-6xl  font-semibold"><?php echo esc_html( $main_title ); ?></h2>
 				<div class="start-wrapper mt-3 mb-6 flex space-x-2 items-center">

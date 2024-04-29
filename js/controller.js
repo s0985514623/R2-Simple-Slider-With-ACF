@@ -17,7 +17,7 @@ const r2_comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
   // autoplay: {
   //   delay: 3000,
   // },
-  slidesPerView: 3,
+  slidesPerView: 2,
   spaceBetween: 10,
   loop: true,
   pagination: {
@@ -28,6 +28,7 @@ const r2_comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  centeredSlides: true,
   on: {
     init: function () {
       const swiper = this;
@@ -36,6 +37,12 @@ const r2_comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
     resize: function () {
       const swiper = this;
       setSlideHeight(swiper); // 也在窗口大小改变时调整高度
+    },
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+      centeredSlides: false,
     },
   },
 });
