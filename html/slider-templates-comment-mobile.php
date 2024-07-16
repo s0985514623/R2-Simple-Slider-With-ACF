@@ -8,15 +8,19 @@
 		'main_title'  => $main_title,
 		'sec_title'   => $sec_title,
 		'slider_link' => $slider_link,
+		'img'         => $img,
 ] = $args;
 
 if ( ! empty( $main_title ) ) :
 	?>
-<div class="swiper-slide w-full ">
-		<div class="slider-content w-full h-full  py-5 flex flex-col  justify-between gap-5">
-			<div class="content">
-				<h2 class="!mb-0  text-6xl  font-semibold"><?php echo esc_html( $main_title ); ?></h2>
-				<div class="start-wrapper mt-3 mb-6 flex space-x-2 items-center">
+<div class="swiper-slide !w-3/4">
+		<div class="slider-content w-full h-full py-5 flex flex-col gap-5 items-center">
+			<div class="content pb-4">
+			<img src="<?php echo esc_url( $img ); ?>" alt="" class="object-cover w-full !rounded-[44px]">
+			<div class="bg-[#407F6A] rounded-full text-center mx-14 w-auto -translate-y-1/2">
+				<span class="text-sm font-medium text-white"><?php echo esc_html( $main_title ); ?></span>
+			</div>
+				<div class="start-wrapper mb-2 flex space-x-2 justify-center">
 								<span>
 								<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
@@ -58,10 +62,10 @@ if ( ! empty( $main_title ) ) :
 								</svg>
 								</span>
 							</div>
-				<p class="!mb-0  text-xl font-medium"><?php echo esc_html( $sec_title ); ?></p>
+				<p class="!mb-0 text-sm font-medium text-[#120402] line-clamp-2"><?php echo esc_html( $sec_title ); ?></p>
 			</div>
 
-				<a href="<?php echo esc_html( $slider_link ); ?>" class=" w-fit text-xl font-semibold text-white bg-[#407F6A] py-1 px-4 rounded-full mb-10">享味好實在 ></a>
+				<a href="<?php echo esc_html( $slider_link ); ?>" class="w-fit text-xl font-medium text-white bg-[#407F6A] py-2.5 px-6 rounded-full ">享味好實在 ></a>
 
 		</div>
 	</div>

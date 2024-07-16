@@ -76,6 +76,9 @@
 
 /*平板以下*/
 @media screen and (max-width: 769px) {
+	.r2-slider{
+		border-radius: 0 0 40px 40px;
+	}
   .r2-slider .swiper-slide {
     max-height: 965px;
     height: auto;

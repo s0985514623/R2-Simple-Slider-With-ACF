@@ -12,7 +12,16 @@ const r2_slider = new Swiper(".r2-slider", {
     prevEl: ".swiper-button-prev",
   },
 });
-
+// Comment Slider
+const r2_comment_mobile = new Swiper(".r2-comment-mobile", {
+  // autoplay: {
+  //   delay: 3000,
+  // },
+	slidesPerView: "auto",
+	spaceBetween: 25,
+	loop: true,
+	centeredSlides: true,
+});
 const r2_comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
   // autoplay: {
   //   delay: 3000,
