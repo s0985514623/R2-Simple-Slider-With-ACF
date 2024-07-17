@@ -1,22 +1,29 @@
 <?php
 /**
- * Slider templates
+ * Slider Comment templates
  */
 
 // 解構賦值 $args.
 [
 		'main_title'  => $main_title,
 		'sec_title'   => $sec_title,
-		'slider_link' => $slider_link,
-] = $args;
+		'img'         => $img,
+]      = $args;
+$agent = $_SERVER['HTTP_USER_AGENT'];
 
 if ( ! empty( $main_title ) ) :
 	?>
-<div class="swiper-slide w-full ">
-		<div class="slider-content w-full h-full  py-5 flex flex-col  justify-between gap-5">
-			<div class="content">
-				<h2 class="!mb-0  text-6xl  font-semibold"><?php echo esc_html( $main_title ); ?></h2>
-				<div class="start-wrapper mt-3 mb-6 flex space-x-2 items-center">
+<div class="swiper-slide ">
+		<div class="slider-content w-full h-full py-5 flex flex-col gap-5 items-center">
+			<div class="content pb-4">
+				<div class="img_wrap sm:rounded-[58px] sm:overflow-hidden sm:aspect-square">
+					<img src="<?php echo esc_url( $img ); ?>" alt="" class="object-cover w-full !rounded-[44px]">
+					<div class="sm:-translate-y-full sm:mx-0 sm:max-w-[320px] sm:rounded-tl-none sm:py-1 bg-[#407F6A] rounded-full text-center mx-14 w-auto -translate-y-1/2">
+						<span class="sm:text-3xl text-sm font-medium text-white"><?php echo esc_html( $main_title ); ?></span>
+					</div>
+				</div>
+
+				<div class="start-wrapper sm:my-5 mb-2 flex space-x-2 justify-center">
 								<span>
 								<svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path
@@ -58,11 +65,8 @@ if ( ! empty( $main_title ) ) :
 								</svg>
 								</span>
 							</div>
-				<p class="!mb-0  text-xl font-medium"><?php echo esc_html( $sec_title ); ?></p>
+				<p class="sm:text-center !mb-0 text-sm font-medium text-[#120402] line-clamp-2"><?php echo esc_html( $sec_title ); ?></p>
 			</div>
-
-				<a href="<?php echo esc_html( $slider_link ); ?>" class=" w-fit text-xl font-semibold text-white bg-[#407F6A] py-1 px-4 rounded-full mb-10">享味好實在 ></a>
-
 		</div>
 	</div>
 <?php endif; ?>

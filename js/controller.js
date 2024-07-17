@@ -1,5 +1,5 @@
 // Banner Slider
-const r2_slider = new Swiper(".r2-slider", {
+const r2_slider = new Swiper(".r2-slider.r2-banner", {
   // autoplay: {
   //   delay: 3000,
   // },
@@ -13,7 +13,7 @@ const r2_slider = new Swiper(".r2-slider", {
   },
 });
 // Comment Slider
-const r2_comment_mobile = new Swiper(".r2-comment-mobile", {
+const r2_comment_mobile = new Swiper(".r2-slider.r2-comment", {
   // autoplay: {
   //   delay: 3000,
   // },
@@ -21,6 +21,19 @@ const r2_comment_mobile = new Swiper(".r2-comment-mobile", {
 	spaceBetween: 25,
 	loop: true,
 	centeredSlides: true,
+	pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+	breakpoints: {
+    768: {
+      slidesPerView: 3,
+    },
+  },
 });
 const r2_comment_thumbs = new Swiper(".r2-slider-comment-thumbs", {
   // autoplay: {

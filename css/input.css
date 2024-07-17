@@ -11,15 +11,15 @@
   font-weight: 400;
   font-style: normal;
 }
-.r2-slider {
+.r2-slider.r2-banner {
   border-radius: 0 0 90px 90px;
   overflow: hidden;
 }
-.r2-slider .swiper-slide {
+.r2-slider.r2-banner .swiper-slide {
   max-height: 965px;
   height: calc(100vh - 115px);
 }
-.r2-slider .swiper-slide .slider-content:after {
+.r2-slider.r2-banner .swiper-slide .slider-content:after {
   content: "";
   background-color: #1204024d;
   position: absolute;
@@ -37,7 +37,6 @@
   z-index: 2;
 }
 .r2-slider .sec_title {
-  font-family: Kosugi Maru;
   font-size: 24px;
   font-weight: 400;
   color: white;
@@ -46,11 +45,12 @@
 .r2-slider .swiper-controller-wrap {
   background-color: #12040299;
 }
+.r2-slider.r2-comment .swiper-controller-wrap {
+  background-color: transparent;
+}
 
 .r2-slider .swiper-controller-wrap .swiper-button-next,
-.r2-slider .swiper-controller-wrap .swiper-button-prev,
-.r2-slider-comment-thumbs .swiper-button-next,
-.r2-slider-comment-thumbs .swiper-button-prev {
+.r2-slider .swiper-controller-wrap .swiper-button-prev{
   position: unset;
   height: fit-content;
   margin: 0 10px;
@@ -59,27 +59,34 @@
   position: unset;
   color: white;
 }
-.r2-slider-comment-thumbs .swiper-pagination {
+.r2-slider.r2-comment .swiper-controller-wrap .swiper-pagination {
+  color: #120402;
+}
+/* .r2-slider-comment-thumbs .swiper-pagination {
   position: unset;
   color: black;
-}
+} */
 .r2-slider .swiper-controller-wrap .swiper-button-next:after,
 .r2-slider .swiper-controller-wrap .swiper-button-prev:after {
   font-size: 20px;
   color: white;
 }
-.r2-slider-comment-thumbs .swiper-button-next:after,
+.r2-slider.r2-comment .swiper-controller-wrap .swiper-button-next:after,
+.r2-slider.r2-comment .swiper-controller-wrap .swiper-button-prev:after {
+  color: #120402;
+}
+/* .r2-slider-comment-thumbs .swiper-button-next:after,
 .r2-slider-comment-thumbs .swiper-button-prev:after {
   font-size: 20px;
   color: black;
-}
+} */
 
 /*平板以下*/
 @media screen and (max-width: 769px) {
-	.r2-slider{
+	.r2-slider.r2-banner{
 		border-radius: 0 0 40px 40px;
 	}
-  .r2-slider .swiper-slide {
+  .r2-slider.r2-banner .swiper-slide {
     max-height: 965px;
     height: auto;
     width: 100%;
